@@ -39,10 +39,11 @@ void loop() {
   deButtonValue = digitalRead(deButtonPin); //Copy button value to the variable
   if (!addButtonValue) { //Check if the button is pressed
       ledValue += 16; //add pwm value
+      delay(100); //Wait fo 100 mS
     }
   if (!deButtonValue) { //Check if the button is pressed
       ledValue -= 16; //de pwm value
+      delay(100); //Wait fo 1000 mS
     }
   analogWrite(ledPin, ledValue); //Write the values
-delay(100); //Wait fo 20 mS
 }
